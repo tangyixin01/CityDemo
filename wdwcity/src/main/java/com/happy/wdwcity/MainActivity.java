@@ -73,12 +73,10 @@ public class MainActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //当输入框里面的值为空，更新为原来的列表，否则为过滤数据列表
                 filterData(s.toString());
-
                 if(s!=null){
                     main_lv.removeHeaderView(head_view);
                 }
             }
-
             @Override
             public void afterTextChanged(Editable s) {
                 if(s.length()==0){
