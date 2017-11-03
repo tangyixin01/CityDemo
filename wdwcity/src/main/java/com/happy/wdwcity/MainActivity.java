@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         View head_view = View.inflate(MainActivity.this, R.layout.rcview_head, null);
         main_lv.addHeaderView(head_view);
         MySideBar = (SideBar) findViewById(R.id.MySideBar);
-
         initData();
 
         MySideBar.setOnTouchingLetterChangedListener(new SideBar.OnTouchingLetterChangedListener() {
