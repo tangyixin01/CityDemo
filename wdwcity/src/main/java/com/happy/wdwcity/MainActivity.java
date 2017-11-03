@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         main_lv = (ListView) findViewById(R.id.main_lv);
         head_view = View.inflate(MainActivity.this, R.layout.rcview_head, null);
 
-        et_city = head_view.findViewById(R.id.et_city);
+        et_city = (EditText) findViewById(R.id.et_city);
         main_lv.addHeaderView(head_view);
         MySideBar = (SideBar) findViewById(R.id.MySideBar);
         initData();
@@ -73,10 +73,18 @@ public class MainActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //当输入框里面的值为空，更新为原来的列表，否则为过滤数据列表
                 filterData(s.toString());
+
+                if(s!=null){
+                    main_lv.removeHeaderView(head_view);
+                }
             }
 
             @Override
             public void afterTextChanged(Editable s) {
+                if(s.length()==0){
+                    main_lv.addHeaderView(head_view);
+
+                }
 
             }
         });
