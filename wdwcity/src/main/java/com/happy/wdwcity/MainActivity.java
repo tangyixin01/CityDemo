@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 if(s.length()==0){
                     main_lv.addHeaderView(head_view);
-
                 }
 
             }
